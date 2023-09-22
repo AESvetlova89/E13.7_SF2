@@ -1,0 +1,31 @@
+{
+  "name": "e13.7_sf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "lint": "eslint \"src/*.js\" --fix",
+    "start-dev": "webpack serve --config webpack.dev.js",
+    "start-prod": "webpack serve --config webpack.prod.js",
+    "json-server": "json-server --watch db.json",
+    "prepare": "husky install"
+  },
+  "author": "AESvetlova89",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.3",
+    "husky": "^8.0.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "eslint": "^8.49.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "json-server": "^0.17.3",
+    "webpack-prod-server": "^1.1.1"
+  }
+}
