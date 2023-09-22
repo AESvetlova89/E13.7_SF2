@@ -1,25 +1,23 @@
-//document.write('Hello, webpack!');
-let helloElement = document.createElement("div");
+// document.write('Hello, webpack!');
+const helloElement = document.createElement("div");
 helloElement.innerText = "Hello, SkillFactory!";
 document.body.appendChild(helloElement);
 
-let requestButton = document.createElement("button");
-let dataField = document.createElement('textarea');
+const requestButton = document.createElement("button");
+const dataField = document.createElement("textarea");
 
 async function requestData() {
-    await fetch(`http://localhost:3000/posts`, {
-        method: 'GET'
-    }).then(async response => response.json())
-        .then(async json => {
+    await fetch("http://localhost:3000/posts", {
+        method: "GET",
+    }).then(async (response) => response.json())
+        .then(async (json) => {
             dataField.value = "";
-            for (let obj of json) {
-                for (let item in obj) {
-                    dataField.value += item + ": " + obj[item] + "\n";
+            for (const obj of json) {
+                for (const item in obj) {
+                    dataField.value += `${item}: ${obj[item]}\n`;
                 }
-
             }
         });
-
 }
 
 requestButton.innerText = "Get data";
